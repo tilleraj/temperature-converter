@@ -11,7 +11,23 @@
 
 <body>
     <h1>Temperature Converter Body</h1>
+    <div class="converter">
+        <label for="name">Temp to convert:</label>
+        <input type="text" id="tempInput">
+        <div>Convert to:
+            <input type="radio" id="C" name="units" value="C" checked>
+            <label for="C">C</label>
+            <input type="radio" id="F" name="units" value="F">
+            <label for="F">F</label>
+        </div>
+        <div id="buttons">
+            <button id="convertBtn">Convert</button>
+        </div>
+        <div class="outputContainer">
+            <output id="tempOutput"></output>
+        </div>
 
+    </div>
     <script src="./main.js"></script>
 </body>
 
