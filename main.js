@@ -9,7 +9,25 @@ const printToDom = (divId, textToPrint) => {
 
 const domStringBuilder = (finalTemp, unit) => {
     let domString = '';
-    domString = `<h2>${finalTemp}° ${unit}</h2>`;
+    let tempColor = ''
+    if (unit === 'C') {
+        if (finalTemp > 32) {
+            tempColor = 'hot'
+        } else if (finalTemp < 0) {
+            tempColor = 'cold'
+        } else {
+            tempColor = 'goldilocks'
+        }
+    } else if (unit === 'F') {
+        if (finalTemp > 90) {
+            tempColor = 'hot'
+        } else if (finalTemp < 32) {
+            tempColor = 'cold'
+        } else {
+            tempColor = 'goldilocks'
+        }
+    }
+    domString = `<h2 class=${tempColor}>${finalTemp}° ${unit}</h2>`;
     printToDom('tempOutput', domString);
 }
 

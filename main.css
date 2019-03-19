@@ -5,13 +5,41 @@ body {
 .converter {
     width: 300px;
     max-width: 100%;
+    border: 1px solid black;
+    padding: 30px;
+}
+
+#tempInput {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#radio-buttons {
+    margin-bottom: 10px;
+}
+
+#buttons {
+    margin-bottom: 10px;
 }
 
 .outputContainer {
     background-color: aliceblue;
     min-height: 100px;
+    width: 100%;
     border: 1px solid rgba(0,0,0,0.3);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hot {
+    color: red;
+}
+
+.cold {
+    color: blue;
+}
+
+.goldilocks {
+    color: green;
 }
