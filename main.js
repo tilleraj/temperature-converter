@@ -68,8 +68,24 @@ const buttonEvents = () => {
     document.getElementById('clearBtn').addEventListener('click', buttonClick);
 }
 
+const addKeydownConvert = (elementID) => {
+    document.getElementById(elementID).addEventListener('keydown', function (e) {
+        if (e.keyCode === 13) {
+            determineConverter();
+        }
+    });
+}
+
+const keydownEvents = () => {
+    addKeydownConvert('tempInput');
+    addKeydownConvert('C');
+    addKeydownConvert('F');
+    addKeydownConvert('convertBtn');
+}
+
 const init = () => {
     buttonEvents();
+    keydownEvents();
 };
 
 init();

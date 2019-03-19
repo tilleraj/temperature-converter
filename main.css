@@ -1,5 +1,6 @@
 body {
     background-color: lightsteelblue;
+    text-align: center;
 }
 
 .converter {
@@ -7,6 +8,8 @@ body {
     max-width: 100%;
     border: 1px solid black;
     padding: 30px;
+    margin: auto;
+    text-align: left;
 }
 
 #tempInput {
