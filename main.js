@@ -1,5 +1,3 @@
-console.log('setup is working');
-
 const input = document.getElementById('tempInput');
 
 const printToDom = (divId, textToPrint) => {
@@ -43,29 +41,31 @@ const toF = (temp) => {
     domStringBuilder(newTemp, 'F');
 }
 
-determineConverter = () => {
+const determineConverter = () => {
     if (document.getElementById('C').checked === true) {
-        console.log(document.getElementById('tempInput').value);
-        console.log('C');
-        // document.getElementById('tempOutput').value = document.getElementById('tempInput').value;
         toC(document.getElementById('tempInput').value);
     } else if (document.getElementById('F').checked === true) {
-        console.log(document.getElementById('tempInput').value);
-        console.log('F');
-        // document.getElementById('tempOutput').value = document.getElementById('tempInput').value;
         toF(document.getElementById('tempInput').value);
     }
+}
+
+const clear = () => {
+    input.value = '';
+    document.getElementById('tempOutput').innerHTML = '';
 }
 
 const buttonClick = (e) => {
     const buttonId = e.target.id;
     if (buttonId === 'convertBtn') {
         determineConverter();
+    } else if (buttonId === 'clearBtn') {
+        clear();
     }
 }
 
 const buttonEvents = () => {
     document.getElementById('convertBtn').addEventListener('click', buttonClick);
+    document.getElementById('clearBtn').addEventListener('click', buttonClick);
 }
 
 const init = () => {
